@@ -1,12 +1,76 @@
-# React + Vite
+# Music Library Micro Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based music library application demonstrating Micro Frontend Architecture with role-based authentication.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎵 Music library with filtering, sorting, and grouping
+- 🏗️ Micro Frontend architecture using Module Federation
+- 🔒 Role-based authentication (admin/user)
+- 🚀 Independently deployable components
 
-## Expanding the ESLint configuration
+## Demo Credentials
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Admin User**:
+- Username: `admin`
+- Password: `admin123`
+- Permissions: Add, edit, and delete songs
+
+**Regular User**:
+- Username: `user`
+- Password: `user123`
+- Permissions: View and filter songs only
+
+## 🛠 Local Development Setup
+
+### Prerequisites
+- Node.js v18+
+- npm or yarn
+- Git
+
+
+### Main Pages :
+![image alt](https://github.com/Aayushg2002/music-library-microfrontend/blob/91085155621328365e4543170ef29d6b3a831039/1.png)
+### Admin Login Pages :
+![image alt](https://github.com/Aayushg2002/music-library-microfrontend/blob/f774555cd8bcaf17e61ae4f8d2c010edf8f7f3ab/2.png)
+### User Login Pages :
+![image alt](https://github.com/Aayushg2002/music-library-microfrontend/blob/f32cc54bd471070ad19e42dfba8111ba79e55ab0/3.png)
+### Music Library:
+![image alt](https://github.com/Aayushg2002/music-library-microfrontend/blob/f32cc54bd471070ad19e42dfba8111ba79e55ab0/4.png)
+
+###Architecture Overview:
+
+Micro Frontend Implementation
+  The application uses Webpack Module Federation to implement the micro frontend architecture:
+     1.Container App:
+         Acts as the host application
+         Dynamically loads the Music Library micro frontend
+         Manages authentication state via React Context
+         Provides the auth context to the micro frontend
+     2.Music Library (Micro Frontend):
+         Exposes its components via Module Federation
+         Receives auth props from the container
+         Contains all music library functionality
+         Has no direct authentication logic
+         
+Role-Based Authentication
+  The authentication system works as follows:
+    1.Mock JWT:
+         Tokens are stored in localStorage
+         Contains user role information
+         No actual backend validation (purely frontend mock)
+    2.Role Handling:
+         Admin role sees all CRUD operations
+         User role only sees read-only views
+         UI elements are shown/hidden based on roles
+    3.Protected Routes:
+         Unauthenticated users are redirected to login
+         Role-specific routes are enforced
+
+ Built With:
+     React 18
+     Vite
+     Webpack Module Federation
+     Tailwind CSS
+     React Router
+     JWT (mock implementation)
