@@ -4,7 +4,10 @@ A React-based music library application demonstrating Micro Frontend Architectur
 
 
 # deployment link:
- -✈️ https://friendly-blini-7eaa90.netlify.app
+  -Main-app
+    -✈️ https://friendly-blini-7eaa90.netlify.app
+  -Music-library link
+    -✈️ https://playful-otter-d15f10.netlify.app
 
 ## Features
 
@@ -42,7 +45,7 @@ A React-based music library application demonstrating Micro Frontend Architectur
 ### Music Library:
 ![image alt](https://github.com/Aayushg2002/music-library-microfrontend/blob/f32cc54bd471070ad19e42dfba8111ba79e55ab0/4.png)
 
-###Architecture Overview:
+#Architecture Overview:
 
 -Micro Frontend Implementation
   The application uses Webpack Module Federation to implement the micro frontend architecture:
