@@ -3,10 +3,10 @@
 A React-based music library application demonstrating Micro Frontend Architecture with role-based authentication.
 
 
-## Deployment link:
-  -Main-app
+## Deployment links
+  **Main-app**:
     -✈️ https://friendly-blini-7eaa90.netlify.app
-  -Music-library link
+  **Music-library**
     -✈️ https://playful-otter-d15f10.netlify.app
 
 ## Features
